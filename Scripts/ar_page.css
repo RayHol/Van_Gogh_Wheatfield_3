@@ -58,7 +58,7 @@
     border-radius: 5px;
     cursor: pointer;
     z-index: 11; /* Ensure the button is always on top */
-    background: url('https://cdn.glitch.global/f9a8c67e-8881-49f3-8d06-5d2ff7a6db2c/back-icon-wh.png?v=1687362382554') no-repeat center center;
+    background: url("../Assets/back-icon-wh.png") no-repeat center center;
     background-size: contain;
     background-color: transparent;
 }
