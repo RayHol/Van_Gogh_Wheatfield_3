@@ -1,15 +1,18 @@
 #startText, #audioPrompt {
     position: fixed;
-    top: 25%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     width: 80%;
     color: #ffffff;
     font-family:'Poppins' , sans-serif;
-    font-size: 1.2em;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
     z-index: 10;
-/*     text-shadow: 2px 2px #000000; */
+    text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.7);
     display: none; /* initially hide the text */
 }
 
@@ -17,32 +20,44 @@
     display: none;
     top: 80%;
 }
+#audioPrompt img {
+    vertical-align: middle;
+    margin-right: 5px; 
+    width: 16px; 
+    height: 16px;
+}
 
 #audioPrompt button {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0 auto;
     padding: 10px 20px;
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #EEF0F3;
+    color: #1B1B1B;
     border: none;
-    border-radius: 5px;
-    font-size: 0.8em;
+    border-radius: 4px;
+    font-size: 12px;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
     cursor: pointer;
+    gap: 8px; 
 }
+
 
 #background {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 70%;
-    height:70%;
+    width: 221px;
+    height: 175px;
     transform: translate(-50%, -50%);
     z-index: 9;
     background: url("../Assets/WheatfieldSM.png") no-repeat center center fixed; 
     background-size: contain;
-    opacity: 0.5;
+    opacity: 0.7;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden; 
     display: none; /* initially hide the background */
 }
@@ -50,15 +65,15 @@
 /* New styles for the back button */
 #backButton {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 48px;  
-    height: 48px;  
+  top: 20px;
+    left: 20px;
+    width: 93px;  
+    height: 44px;  
     border: none;
     border-radius: 5px;
     cursor: pointer;
     z-index: 11; /* Ensure the button is always on top */
-    background: url("../Assets/back-icon-wh.png") no-repeat center center;
+    background: url("https://cdn.glitch.global/f9a8c67e-8881-49f3-8d06-5d2ff7a6db2c/Back-button.svg?v=1687423522203") no-repeat center center;
     background-size: contain;
     background-color: transparent;
 }
