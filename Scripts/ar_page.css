@@ -73,7 +73,7 @@
     border-radius: 5px;
     cursor: pointer;
     z-index: 11; /* Ensure the button is always on top */
-    background: url("https://cdn.glitch.global/f9a8c67e-8881-49f3-8d06-5d2ff7a6db2c/Back-button.svg?v=1687423522203") no-repeat center center;
+    background: url("../Assets/Back-button.svg") no-repeat center center;
     background-size: contain;
     background-color: transparent;
 }
