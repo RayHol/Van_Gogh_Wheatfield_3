@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   AFRAME.registerComponent("ar-controller", {
     init: function () {
+        // Get references to the necessary DOM elements
         const target = document.getElementById("target");
         const video = document.getElementById("video");
         const audio = document.getElementById("backgroundAudio");
@@ -9,9 +10,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const audioPrompt = document.getElementById("audioPrompt");
         const backgroundImage = document.getElementById("background");
         const backButton = document.getElementById("backButton");
+
+        // Initialize variables
         var played = false;
         var userInteracted = false;
 
+        // Function to check if the device is iOS
         function isIOS() {
             return [
                 'iPad Simulator',
@@ -24,12 +28,14 @@ document.addEventListener('DOMContentLoaded', function () {
             || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
         }
 
+        // Event listener for audio prompt button click
         audioPrompt.addEventListener("click", () => {
             audio.play();
             audioPrompt.style.display = "none";
             userInteracted = true;
         });
 
+        // Event listener for target found event
         target.addEventListener("targetFound", () => {
             console.log("target found");
             this.found = true;
@@ -52,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
+        // Event listener for target lost event
         target.addEventListener("targetLost", () => {
             console.log("target lost");
             this.found = false;
@@ -63,16 +70,19 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
+        // Event listener for arframe event
         this.el.addEventListener("arframe", () => {
             if (!this.found && played) {
                 plane.object3D.position.copy(plane.object3D.position);
             }
         });
       
-      backButton.addEventListener('click', () => {
+        // Event listener for back button click
+        backButton.addEventListener('click', () => {
             window.location.href = 'index.html';
         });
 
+        // Delay the display of start text and background image
         setTimeout(function() {
             startText.style.display = "block";
             backgroundImage.style.display = "block";
